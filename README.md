@@ -8,7 +8,9 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 ## Challenge 001
 
-#### I'd like you to develop a Vue frontend that will use the data from this API https://gitlab.com/Kjir/zueri-wie-neu-sample
+#### I'd like you to develop a Vue frontend that will use the data from this API   
+
+https://gitlab.com/Kjir/zueri-wie-neu-sample
 
 #### What I expect to see
 - a list of messages that allows you to click on a single message to see more details
