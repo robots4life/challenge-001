@@ -1,0 +1,9 @@
+https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3/
+
+npm install --save-dev prettier --verbose
+
+npm install --save-dev eslint eslint-plugin-vue --verbose
+
+npm install eslint-config-prettier --save-dev --verbose
+
+https://stackoverflow.com/a/64273353/1010918

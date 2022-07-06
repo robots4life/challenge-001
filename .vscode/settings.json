@@ -1,0 +1,24 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": false,
+	"prettier.requireConfig": true,
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	// https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": "active",
+	"editor.tabCompletion": "on",
+	// https://stackoverflow.com/questions/54827043/how-to-disable-abc-suggestion-on-vs-code
+	"editor.suggest.showWords": false,
+	"editor.wordBasedSuggestions": false,
+	"editor.snippetSuggestions": "top",
+	"javascript.suggest.names": false,
+	"prettier.configPath": "/shared/httpd/vue/vite/challenge-001/.prettierrc.json",
+	"prettier.prettierPath": "/shared/httpd/vue/vite/challenge-001/node_modules/prettier",
+	"prettier.ignorePath": "/shared/httpd/vue/vite/challenge-001/.prettierignore"
+}
