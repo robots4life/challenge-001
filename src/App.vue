@@ -7,7 +7,7 @@ import ListMessages from './components/ListMessages.vue';
 <template>
 	<img alt="Vue logo" src="./assets/logo.png" />
 
-	<ListMessages msg="Hello Vue 3 + Vite" />
+	<ListMessages />
 </template>
 
 <style>
