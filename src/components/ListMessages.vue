@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from 'vue';
-
 const messages = ref(null);
 
 async function getAllMessages() {
@@ -27,8 +26,8 @@ function removeAllMessages() {
 	<ul v-for="message in messages" :key="message.id">
 		<li>
 			<p>{{ message.type }}</p>
-			<a :href="'http://localhost:3030/messages/' + message.id">Details</a>
-			<!-- <p>{{ message.properties }}</p> -->
+			<a target="_blank" :href="'http://localhost:3030/messages/' + message.id">Details</a>
+			<p>{{ message.properties }}</p>
 		</li>
 		<hr />
 	</ul>

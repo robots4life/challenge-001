@@ -7,3 +7,10 @@ npm install --save-dev eslint eslint-plugin-vue --verbose
 npm install eslint-config-prettier --save-dev --verbose
 
 https://stackoverflow.com/a/64273353/1010918
+
+npm install vue-router@4 --verbose
+
+eslint prettier vscode vue attribute sort order
+https://stackoverflow.com/questions/52102705/cant-get-correct-autoformat-on-save-in-visual-studio-code-with-eslint-and-prett#comment106193957_52259752
+
+https://eslint.vuejs.org/rules/attributes-order.html
