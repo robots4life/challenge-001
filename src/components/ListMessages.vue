@@ -10,6 +10,10 @@
 		<li>
 			<p>{{ message.type }}</p>
 			<a target="_blank" :href="'http://localhost:3030/messages/' + message.id">Details</a>
+			<div class="messageDetails">
+				<button @click="getMessageDetails(message.id)">Get Message Details</button>
+				<p>{{ messageData.details }}</p>
+			</div>
 			<!-- <p>{{ message.properties }}</p> -->
 		</li>
 		<hr />
@@ -17,7 +21,7 @@
 </template>
 
 <script setup>
-import { ref, onBeforeMount } from 'vue';
+import { ref, onBeforeMount, reactive } from 'vue';
 const messages = ref(null);
 
 async function getAllMessages() {
@@ -28,6 +32,15 @@ async function getAllMessages() {
 onBeforeMount(() => {
 	getAllMessages();
 });
+
+const messageData = reactive({
+	details: 'Message Details'
+});
+
+async function getMessageDetails(id) {
+	const response = await fetch(`http://localhost:3030/messages/${id}`);
+	messageData.details = await response.json();
+}
 
 function removeAllMessages() {
 	return (messages.value = '');
