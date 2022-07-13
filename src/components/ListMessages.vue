@@ -12,6 +12,7 @@
 			<a target="_blank" :href="'http://localhost:3030/messages/' + message.id">Details</a>
 			<div class="messageDetails">
 				<button
+					class="messageDetailsButton"
 					@click="
 						{
 							expandedMessageId = message.id;
@@ -70,5 +71,10 @@ p {
 }
 li {
 	list-style-type: none;
+}
+.messageDetails,
+.messageDetailsButton {
+	padding: 2rem;
+	margin-bottom: 2rem;
 }
 </style>
