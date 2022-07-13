@@ -8,7 +8,7 @@
 	<hr />
 	<ul v-for="message in messages" :key="message.id">
 		<li>
-			<p>{{ message.type }}</p>
+			<p>{{ message.type }} : {{ message.id }}</p>
 			<a target="_blank" :href="'http://localhost:3030/messages/' + message.id">Details</a>
 			<div class="messageDetails">
 				<button
