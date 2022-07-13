@@ -1,20 +1,3 @@
-<script setup>
-import { ref } from 'vue';
-const messages = ref(null);
-
-async function getAllMessages() {
-	const response = await fetch('http://localhost:3030/messages');
-
-	// https://developer.mozilla.org/en-US/docs/Web/API/Response/json
-	// takes JSON and returns a JavaScript object !! JSON != JS ;)
-	messages.value = await response.json();
-}
-
-function removeAllMessages() {
-	return (messages.value = '');
-}
-</script>
-
 <template>
 	<hr />
 	<button @click="getAllMessages()">Get All Messages</button><br />
@@ -27,11 +10,29 @@ function removeAllMessages() {
 		<li>
 			<p>{{ message.type }}</p>
 			<a target="_blank" :href="'http://localhost:3030/messages/' + message.id">Details</a>
-			<p>{{ message.properties }}</p>
+			<!-- <p>{{ message.properties }}</p> -->
 		</li>
 		<hr />
 	</ul>
 </template>
+
+<script setup>
+import { ref, onBeforeMount } from 'vue';
+const messages = ref(null);
+
+async function getAllMessages() {
+	const response = await fetch('http://localhost:3030/messages');
+	messages.value = await response.json();
+}
+
+onBeforeMount(() => {
+	getAllMessages();
+});
+
+function removeAllMessages() {
+	return (messages.value = '');
+}
+</script>
 
 <style scoped>
 ul,
