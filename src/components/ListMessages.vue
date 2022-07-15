@@ -2,6 +2,10 @@
 	<hr />
 	<button @click="getAllMessages()">Get All Messages</button><br />
 	<hr />
+	<div v-if="errorMessage" class="error">
+		<p>Error Fetching Messages</p>
+		<p>{{ errorDetails }}</p>
+	</div>
 	<button @click="removeAllMessages()">Remove All Messages</button>
 	<hr />
 	<h1>Messages</h1>
@@ -23,39 +27,32 @@
 				</button>
 				<p v-if="expandedMessageId == message.id">{{ message.properties }}</p>
 			</div>
-			<!-- <div class="messageDetails">
-				<button @click="getMessageDetails(message.id)">Get Message Details</button>
-				<p>{{ messageData.details }}</p>
-			</div> -->
 		</li>
 		<hr />
 	</ul>
 </template>
 
 <script setup>
-// import { ref, onBeforeMount, reactive } from 'vue';
 import { ref, onBeforeMount } from 'vue';
-const messages = ref(null);
 
+const messages = ref(null);
 let expandedMessageId = ref(null);
+let errorMessage = ref(null);
+let errorDetails = ref(null);
 
 async function getAllMessages() {
-	const response = await fetch('http://localhost:3030/messages');
-	messages.value = await response.json();
+	try {
+		const response = await fetch('http://localhost:3030/messages');
+		messages.value = await response.json();
+	} catch (error) {
+		errorMessage.value = true;
+		errorDetails.value = error;
+	}
 }
 
 onBeforeMount(() => {
 	getAllMessages();
 });
-
-// const messageData = reactive({
-// 	details: 'Message Details'
-// });
-
-// async function getMessageDetails(id) {
-// 	const response = await fetch(`http://localhost:3030/messages/${id}`);
-// 	messageData.details = await response.json();
-// }
 
 function removeAllMessages() {
 	return (messages.value = '');
