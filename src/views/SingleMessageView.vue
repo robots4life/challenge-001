@@ -9,7 +9,10 @@
 			<p>{{ messageDetails.properties.service_code }}</p>
 			<p>{{ messageDetails.properties.status }}</p>
 			<p>{{ messageDetails.properties.detail }}</p>
-			<p>{{ messageDetails.properties.media_url }}</p>
+			<p v-if="messageDetails.properties.media_url">
+				<a target="_blank" :href="messageDetails.properties.media_url">{{ messageDetails.properties.media_url }}</a>
+				<img :src="messageDetails.properties.media_url" alt="" />
+			</p>
 			<p>{{ messageDetails.properties.interface_used }}</p>
 			<p>{{ messageDetails.properties.requested_datetime }}</p>
 			<p>{{ messageDetails.properties.agency_sent_datetime }}</p>
