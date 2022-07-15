@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import ListMessagesView from '../views/ListMessagesView.vue';
+import AllMessagesView from '../views/AllMessagesView.vue';
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +7,12 @@ const router = createRouter({
 		{
 			path: '/',
 			name: 'home',
-			component: ListMessagesView
+			component: AllMessagesView
+		},
+		{
+			path: '/message/:id',
+			name: 'message',
+			component: () => import('../views/SingleMessageView.vue')
 		}
 	]
 });
