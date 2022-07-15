@@ -3,7 +3,22 @@
 		<h1>Single Message Details</h1>
 		<h2>Case : {{ $route.params.id }}</h2>
 		<hr />
-		<p>{{ messageDetails }}</p>
+		<p>{{ messageDetails.type }}</p>
+		<p>{{ messageDetails.geometry.coordinates }}</p>
+		<p>{{ messageDetails.properties.service_request_id }}</p>
+		<p>{{ messageDetails.properties.service_code }}</p>
+		<p>{{ messageDetails.properties.status }}</p>
+		<p>{{ messageDetails.properties.detail }}</p>
+		<p>{{ messageDetails.properties.media_url }}</p>
+		<p>{{ messageDetails.properties.interface_used }}</p>
+		<p>{{ messageDetails.properties.requested_datetime }}</p>
+		<p>{{ messageDetails.properties.agency_sent_datetime }}</p>
+		<p>{{ messageDetails.properties.updated_datetime }}</p>
+		<p>{{ messageDetails.properties.service_notice }}</p>
+		<p>{{ messageDetails.properties.title }}</p>
+		<p>{{ messageDetails.properties.description }}</p>
+		<p>{{ messageDetails.properties.service_name }}</p>
+		<a href="{{ messageDetails.properties.url }}">{{ messageDetails.properties.url }}</a>
 	</div>
 </template>
 

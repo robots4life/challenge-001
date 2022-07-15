@@ -1,0 +1,27 @@
+{
+	"type": "Feature",
+	"geometry": {
+		"type": "Point",
+		"coordinates": [8.5249753667, 47.3788069027]
+	},
+	"properties": {
+		"objectid": "33906",
+		"service_request_id": "37290",
+		"e": 2682038,
+		"n": 1248120,
+		"service_code": "Signalisation/Lichtsignal",
+		"status": "fixed - council",
+		"detail": "Tafel schräg und völlig verblichen",
+		"media_url": "",
+		"interface_used": "desktop",
+		"requested_datetime": "20220522102705",
+		"agency_sent_datetime": "20220522103202",
+		"updated_datetime": "20220523081900",
+		"service_notice": "Die Dienstabteilung Verkehr hat den von Ihnen gemeldeten Schadenfall registriert. Die für die Wiederinstandstellung notwendigen Massnahmen wurden eingeleitet. <br/> <br/> Freundliche Grüsse <br/> <br/> Ihre Stadt Zürich",
+		"title": "Tafel schrä",
+		"description": "Tafel schrä: Tafel schräg und völlig verblichen",
+		"service_name": "Signalisation/Lichtsignal",
+		"url": "https://www.zueriwieneu.ch/report/37290"
+	},
+	"id": "33906"
+}
