@@ -5,7 +5,7 @@ import ListMessages from './components/ListMessages.vue';
 </script>
 
 <template>
-	<img alt="Vue logo" src="./assets/logo.png" />
+	<!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
 
 	<ListMessages />
 </template>

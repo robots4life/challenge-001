@@ -1,35 +1,37 @@
 <template>
-	<hr />
-	<button @click="getAllMessages()">Get All Messages</button><br />
-	<hr />
-	<div v-if="errorMessage" class="error">
-		<p>Error Fetching Messages</p>
-		<p>{{ errorDetails }}</p>
-	</div>
-	<button @click="removeAllMessages()">Remove All Messages</button>
-	<hr />
-	<h1>Messages</h1>
-	<hr />
-	<ul v-for="message in messages" :key="message.id">
-		<li>
-			<p>{{ message.type }} : {{ message.id }}</p>
-			<a target="_blank" :href="'http://localhost:3030/messages/' + message.id">Details</a>
-			<div class="messageDetails">
-				<button
-					class="messageDetailsButton"
-					@click="
-						{
-							expandedMessageId = message.id;
-						}
-					"
-				>
-					Show Message
-				</button>
-				<p v-if="expandedMessageId == message.id">{{ message.properties }}</p>
-			</div>
-		</li>
+	<div class="home">
 		<hr />
-	</ul>
+		<button @click="getAllMessages()">Get All Messages</button><br />
+		<hr />
+		<div v-if="errorMessage" class="error">
+			<p>Error Fetching Messages</p>
+			<p>{{ errorDetails }}</p>
+		</div>
+		<button @click="removeAllMessages()">Remove All Messages</button>
+		<hr />
+		<h1>Messages</h1>
+		<hr />
+		<ul v-for="message in messages" :key="message.id">
+			<li>
+				<p>{{ message.type }} : {{ message.id }}</p>
+				<a target="_blank" :href="'http://localhost:3030/messages/' + message.id">Details</a>
+				<div class="messageDetails">
+					<button
+						class="messageDetailsButton"
+						@click="
+							{
+								expandedMessageId = message.id;
+							}
+						"
+					>
+						Show Message
+					</button>
+					<p v-if="expandedMessageId == message.id">{{ message.properties }}</p>
+				</div>
+			</li>
+			<hr />
+		</ul>
+	</div>
 </template>
 
 <script setup>
@@ -60,18 +62,21 @@ function removeAllMessages() {
 </script>
 
 <style scoped>
+.home {
+	text-align: center;
+	padding: 2rem;
+	font-size: 1.5rem;
+}
 ul,
 p {
-	font-size: 1.4rem;
-	margin: 0;
-	padding: 0;
+	font-size: 1.5rem;
 }
 li {
 	list-style-type: none;
 }
-.messageDetails,
-.messageDetailsButton {
-	padding: 2rem;
-	margin-bottom: 2rem;
+button {
+	padding: 1rem;
+	font-size: 1.5rem;
+	margin: 1rem;
 }
 </style>
