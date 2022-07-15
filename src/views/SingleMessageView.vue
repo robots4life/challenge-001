@@ -11,6 +11,7 @@
 			<p>{{ messageDetails.properties.detail }}</p>
 			<p v-if="messageDetails.properties.media_url">
 				<a target="_blank" :href="messageDetails.properties.media_url">{{ messageDetails.properties.media_url }}</a>
+				<br />
 				<img :src="messageDetails.properties.media_url" alt="" />
 			</p>
 			<p>{{ messageDetails.properties.interface_used }}</p>
