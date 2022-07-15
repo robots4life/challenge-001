@@ -71,4 +71,7 @@ details {
 	font-size: 1.5rem;
 	margin: 1rem;
 }
+h1 {
+	font-size: 2.5rem;
+}
 </style>
