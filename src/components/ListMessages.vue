@@ -29,6 +29,14 @@
 					<p v-if="expandedMessageId == message.id">{{ message.properties }}</p>
 				</div>
 			</li>
+			<!-- 
+				https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+				native alternative to the toggle show hide content
+			-->
+			<details>
+				<summary>Details</summary>
+				{{ message.properties }}
+			</details>
 			<hr />
 		</ul>
 	</div>
@@ -75,6 +83,12 @@ li {
 	list-style-type: none;
 }
 button {
+	padding: 1rem;
+	font-size: 1.5rem;
+	margin: 1rem;
+}
+details {
+	cursor: pointer;
 	padding: 1rem;
 	font-size: 1.5rem;
 	margin: 1rem;
