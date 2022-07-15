@@ -14,30 +14,39 @@
 		<ul v-for="message in messages" :key="message.id">
 			<li>
 				<p>{{ message.type }} : {{ message.id }}</p>
-				<a target="_blank" :href="'http://localhost:3030/messages/' + message.id">Details</a>
-				<div class="messageDetails">
+				<!-- <a target="_blank" :href="'http://localhost:3030/messages/' + message.id">Details</a> -->
+				<div class="message-details">
 					<button
-						class="messageDetailsButton"
 						@click="
 							{
 								expandedMessageId = message.id;
 							}
 						"
 					>
-						Show Message
+						Single Message Show Details NO TOGGLE
 					</button>
 					<p v-if="expandedMessageId == message.id">{{ message.properties }}</p>
 				</div>
+
+				<button @click="toggleMessageDetails">All Messages Toggle Details</button>
+				<div v-if="showMessageDetails" class="message-details">
+					{{ message.properties }}
+				</div>
+				<!-- 
+					https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+					native alternative to the toggle show hide content
+				-->
+				<details>
+					<summary>Native Toggle Details</summary>
+					{{ message.properties }}
+				</details>
+
+				<button @click="toggleMessageDetailsSingleMessage(message.id)">Single Message Toggle Details</button>
+				<div v-if="toggleShowMessageDetails && messageId == message.id" class="message-details">
+					{{ message.properties }}
+				</div>
+				<hr />
 			</li>
-			<!-- 
-				https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
-				native alternative to the toggle show hide content
-			-->
-			<details>
-				<summary>Details</summary>
-				{{ message.properties }}
-			</details>
-			<hr />
 		</ul>
 	</div>
 </template>
@@ -49,6 +58,23 @@ const messages = ref(null);
 let expandedMessageId = ref(null);
 let errorMessage = ref(null);
 let errorDetails = ref(null);
+let showMessageDetails = ref(false);
+
+let toggleShowMessageDetails = ref(null);
+let messageId = ref(null);
+
+const toggleMessageDetails = () => {
+	console.log(showMessageDetails.value);
+	showMessageDetails.value = !showMessageDetails.value;
+};
+
+const toggleMessageDetailsSingleMessage = (id) => {
+	console.log(toggleShowMessageDetails.value);
+	toggleShowMessageDetails.value = !toggleShowMessageDetails.value;
+
+	console.log(id);
+	messageId.value = id;
+};
 
 async function getAllMessages() {
 	try {
