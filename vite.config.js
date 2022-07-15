@@ -1,3 +1,5 @@
+import { fileURLToPath, URL } from 'url';
+
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
@@ -15,5 +17,10 @@ export default defineConfig({
 	define: {
 		// env-cmd https://blog.hdks.org/Environment-Variables-in-SvelteKit-and-Vercel/
 		'process.env': process.env
+	},
+	resolve: {
+		alias: {
+			'@': fileURLToPath(new URL('./src', import.meta.url))
+		}
 	}
 });

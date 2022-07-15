@@ -1,22 +1,70 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import ListMessages from './components/ListMessages.vue';
-</script>
-
 <template>
-	<!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
-
-	<ListMessages />
+	<nav>
+		<RouterLink to="/">Home</RouterLink>
+	</nav>
+	<RouterView />
 </template>
 
 <style>
+@import '@/assets/base.css';
+
 #app {
-	font-family: Avenir, Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+
+	font-weight: normal;
+	font-size: 1.5rem;
+}
+
+header {
+	line-height: 1.5;
+	max-height: 100vh;
+}
+
+.logo {
+	display: block;
+	margin: 0 auto 2rem;
+}
+
+a,
+.green {
+	text-decoration: none;
+	color: hsla(160, 100%, 37%, 1);
+	transition: 0.4s;
+}
+
+@media (hover: hover) {
+	a:hover {
+		background-color: hsla(160, 100%, 37%, 0.2);
+	}
+}
+
+nav {
+	width: 100%;
 	text-align: center;
-	color: #2c3e50;
-	margin-top: 60px;
+	margin-top: 2rem;
+	font-size: 2rem;
+}
+h1 {
+	font-size: 2rem;
+}
+
+nav a.router-link-exact-active {
+	color: var(--color-text);
+}
+
+nav a.router-link-exact-active:hover {
+	background-color: transparent;
+}
+
+nav a {
+	display: inline-block;
+	padding: 0 1rem;
+	border-left: 1px solid var(--color-border);
+}
+
+nav a:first-of-type {
+	border: 0;
 }
 </style>
